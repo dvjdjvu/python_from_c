@@ -41,7 +41,7 @@ python_init() {
             break;
         }
 
-        // pDict – заимствованная ссылка
+        // Словарь объектов содержащихся в модуле
         pDict = PyModule_GetDict(pModule);
         if (!pDict) {
             break;
@@ -89,6 +89,9 @@ python_clear() {
     Py_Finalize();
 }
 
+/**
+ * Передача строки в качестве аргумента и получение строки назад
+ */
 char *
 python_class_get_str(char *val) {
     char *ret = NULL;
@@ -109,6 +112,9 @@ python_class_get_str(char *val) {
     return ret;
 }
 
+/**
+ * Передача bool в качестве аргумента и получение bool назад
+ */
 bool
 python_class_get_bool(bool val) {
     bool ret = false;
@@ -128,6 +134,9 @@ python_class_get_bool(bool val) {
     return ret;
 }
 
+/**
+ * Передача int в качестве аргумента и получение int назад
+ */
 int 
 python_class_get_int(int val) {
     int ret = 0;
@@ -146,6 +155,9 @@ python_class_get_int(int val) {
     return ret;
 }
 
+/**
+ * Передача double в качестве аргумента и получение double назад
+ */
 double 
 python_class_get_double(double val) {
     double ret = 0.0;
@@ -164,6 +176,9 @@ python_class_get_double(double val) {
     return ret;
 }
 
+/**
+ * Получение значения переменной содержащей значение типа int
+ */
 int 
 python_class_get_val(char *val) {
     int ret = 0;
