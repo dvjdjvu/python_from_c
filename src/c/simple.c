@@ -11,6 +11,7 @@ python() {
     
     // Выполнение команды в интерпритаторе
     PyRun_SimpleString("import sys");
+    // Путь до наших исходников python
     PyRun_SimpleString("sys.path.append('./src/python')");
     PyRun_SimpleString("import simple");
     PyRun_SimpleString("print(simple.get_value(2))");

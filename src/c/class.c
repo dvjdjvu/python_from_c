@@ -29,13 +29,13 @@ python_init() {
         folder_path = PyUnicode_FromString((const char*) "./src/python");
         PyList_Append(sys_path, folder_path);
 
-        // Загрузка class.py
+        // Создание Unicode объекта из UTF-8 строки
         pName = PyUnicode_FromString("class");
         if (!pName) {
             break;
         }
 
-        // Загрузить объект модуля
+        // Загрузить модуль class
         pModule = PyImport_Import(pName);
         if (!pModule) {
             break;

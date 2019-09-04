@@ -8,9 +8,4 @@ c = 33
 def get_value(x):
     return x
 
-def get_bool(self, x):
-    if x:
-        return True
-    else:
-        return False
 

@@ -26,13 +26,13 @@ python_init() {
         folder_path = PyUnicode_FromString((const char*) "./src/python");
         PyList_Append(sys_path, folder_path);
 
-        // Загрузка func.py
+        // Создание Unicode объекта из UTF-8 строки
         pName = PyUnicode_FromString("func");
         if (!pName) {
             break;
         }
 
-        // Загрузить объект модуля
+        // Загрузить модуль func
         pModule = PyImport_Import(pName);
         if (!pModule) {
             break;
@@ -69,6 +69,9 @@ python_clear() {
     Py_Finalize();
 }
 
+/**
+ * Передача строки в качестве аргумента и получение строки назад
+ */
 char *
 python_func_get_str(char *val) {
     char *ret = NULL;
@@ -105,15 +108,20 @@ python_func_get_str(char *val) {
     return ret;
 }
 
+/**
+ * Получение значения переменной содержащей значение типа int
+ */
 int
 python_func_get_val(char *val) {
     int ret = 0;
 
+    // Получить объект с именем val
     pVal = PyDict_GetItemString(pDict, (const char *) val);
     if (!pVal) {
         return ret;
     }
     
+    // Проверка переменной на long
     if (PyLong_Check(pVal)) {
         ret = _PyLong_AsInt(pVal);
     } else {
