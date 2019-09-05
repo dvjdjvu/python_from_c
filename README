@@ -1,5 +1,7 @@
 Примеры вызова python из C.
 
+Описание примеров https://habr.com/ru/post/466181/
+
 make
 ./bin/simple
 ./bin/class
