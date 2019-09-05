@@ -75,7 +75,6 @@ void
 python_clear() {
     // Вернуть ресурсы системе
     Py_XDECREF(pInstance);
-    Py_XDECREF(pClass);
     Py_XDECREF(pDict);
 
     Py_XDECREF(pModule);

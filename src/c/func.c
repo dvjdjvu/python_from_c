@@ -103,8 +103,6 @@ python_func_get_str(char *val) {
         }
     } while (0);
 
-    Py_XDECREF(pObjct);
-
     return ret;
 }
 
@@ -127,8 +125,6 @@ python_func_get_val(char *val) {
     } else {
         PyErr_Print();
     }
-
-    Py_XDECREF(pVal);
 
     return ret;
 }

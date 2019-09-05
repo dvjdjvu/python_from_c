@@ -1,1 +1,6 @@
 Примеры вызова python из C.
+
+make
+./bin/simple
+./bin/class
+./bin/func
